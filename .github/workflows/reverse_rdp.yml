@@ -22,6 +22,10 @@ jobs:
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
-      run: .\ngrok\ngrok.exe tcp 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+      run: .\ngrok\ngrok.exe tcp 3389
+     name: RDP is ready!
+      run: | 
+        Invoke-WebRequest https://github.com/KongGamer620/RDP_2/raw/main/loop.ps1 -OutFile loop.ps1
+        ./loop.ps1
       
     
