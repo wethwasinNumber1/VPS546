@@ -25,7 +25,7 @@ jobs:
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: RDP is ready!
       run: | 
-        Invoke-WebRequest https://github.com/KongGamer620/RDP_2/blob/main/loop.ps1 -OutFile loop.ps1
+        Invoke-WebRequest https://github.com/KongGamer620/RDP_2/raw/main/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
       
     
